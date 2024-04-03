@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+# todo:
+#     path: /todo
+#     controller: App\Controller\ToDoController::number
