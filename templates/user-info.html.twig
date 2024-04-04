@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Post</title>
+        <link rel="stylesheet" href="{{asset('css/demo.css')}}"/>
+    </head>
+    <body>
+    <a href= {{path('index')}}>Go to index page </a>
+        <div class = 'heading'>
+        <h2>
+            {{username | upper}}
+            </h2>
+        </div>
+        <div class = 'profile-pic'>
+            <img src="{{ asset('images/img.png') }}" alt="Symfony!"/>
+        </div>
+        <table>
+            <thead>
+            <tr>
+            <td>Post Name</td>
+            <td>Post Details</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{post.name}}</td>
+                <td>{{post.details}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {# <p>
+        {{app.environment}}
+        </p> #}
+        <h2>{{devansh}}</h2>
+    </body>
+</html>

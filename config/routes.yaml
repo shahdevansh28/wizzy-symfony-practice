@@ -4,3 +4,20 @@
 # todo:
 #     path: /todo
 #     controller: App\Controller\ToDoController::number
+# add_post:
+#     path: /add-post
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+#     defaults:
+#       path : 'http://wizzy-demo.test/get-all-post'
+#       permanent : 'true'
+# post_list:
+#     path: /get-all-post
+#     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+#     defaults:
+#       route: 'post_list'
+#       page: 'index'
+#       version: 'current'
+#       permanent: 'true'
+#       keepQueryParams: 'true'
+#       keepRequestMethod: 'true'
+#       ignoreAttributes: 'true'

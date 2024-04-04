@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.heading {
+    text-align: center;
+    margin: 2rem;
+}
+.profile-pic img{
+    height: 50px;
+    width: 50px;
+}
