@@ -1,2 +1,11 @@
 {# templates/lucky/number.html.twig #}
 <h1>Your lucky number is {{ number }}</h1>
+<div>
+<div class = 'section-heading'>
+<h1>All Post </h1>
+</div class = 'all-post'>
+{% for post in posts %}
+<p>{{ post.title }}</p>
+<post>{{ post.description }}</post>
+{% endfor %}
+</div

@@ -47,22 +47,62 @@ class PostRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return Post[] Returns an array of Post objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return Post Returns an array of Post objects
+    */
+    public function findByTitleField($value)
     {
+        /*
+        //Using Doctrine Query Language looks like SQL
+        $query = $this->_em->createQuery(
+            'SELECT p
+            FROM App\Entity\Post p
+            WHERE p.title = :value
+            '    
+        )->setParameter('value', $value);
+
+        return $query->getResult();
+        */
+
+        
+        //Using Querybuilder
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('p.title = :title')
+            ->setParameter('title', $value)
             ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult()
         ;
+
+        /*
+        //Qury using SQL query
+        $conn = $this->_em->getConnection();
+
+        $sql = 'SELECT *
+        FROM post p
+        WHERE p.title = :value
+        ';
+
+        $stmt = $conn->prepare($sql);
+
+        $result = $stmt->executeQuery(['value' => $value]);
+
+        return $result->fetchOne();
+        */
     }
-    */
+    
+    public function findByUserId($id){
+        $query = $this->_em->createQuery(
+            'SELECT u,p
+            FROM App\Entity\Post p
+            INNER JOIN p.users u 
+            WHERE u.id = :id'
+            )->setParameter('id', $id);
+
+            return $query->getResult();
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Post

@@ -4,6 +4,30 @@
         <title>Add Post</title>
     </head>
     <body>
-        <h1><a href = {{ allpostlinks }}>Link</a></h1>
+    {{form(form)}}
+    {# {{form_start(form)}}
+        {{form(form)}}
+        {{form_rest(form)}}
+    {{form_end(form)}} #}
+        {# <h1><a href = {{ allpostlinks }}>Link</a></h1> #}
+            {# {{ form(form) }} #}
+            {# <form>
+        {{ form_start(form) }}
+        {{ form_row(form._token) }}
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.title) }}
+            </div>
+            <div class="col" id="some-custom-id">
+                {{ form_row(form.description) }}
+            </div>
+        </div>
+        {{ form_rest(form) }}
+        </form>
+    {{ form_end(form) }} #}
     </body>
 </html>
