@@ -194,7 +194,7 @@ class ToDoController extends AbstractController
 
         $logger->info('We are logging!');
         return new Response(
-            "<html><body><h5>" . $post[0]->getTitle() . "</h5><h5>" . $post[1]->getTitle() . "</h5></body></html>"
+            "<html><body><h5>". $post[0]->getTitle() . "</h5><h5>" . $post[1]->getTitle() . "</h5></body></html>"
         );
         // ...
     }
